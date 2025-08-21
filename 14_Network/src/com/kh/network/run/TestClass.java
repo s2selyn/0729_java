@@ -13,7 +13,11 @@ public class TestClass {
 	}
 	
 	public void hi() {
-		
+		System.out.println("가보자구~~~~~");
+	}
+	
+	public void hh() {
+		System.out.println("흐흐 까먹어버림 ㅎㅎ;;");
 	}
 	
 	public void bye() {
