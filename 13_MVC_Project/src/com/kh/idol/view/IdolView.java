@@ -313,7 +313,7 @@ public class IdolView {
 			switch(menuNo) {
 			case 1 : post(); break;
 			case 2 : selectBoardList(); break; // 게시글 목록을 조회하고 싶은거
-			case 3 : break;
+			case 3 : findByBoardNo(); break; // 번호로 받을거임, 나머지는 중복이 발생할 수 있음
 			case 4 : return;
 			}
 			
@@ -385,6 +385,7 @@ public class IdolView {
 		// 해줘야 하는 작업이 다름 --> if-else
 		if(boardList.isEmpty()) { // 뭘 봐야지 없는지 있는지 알 수 있음? null은 될 수 없는뎅? controller 생성해서 올릴때 객체를 생성해서 객체의 주소값이 들어감(boards를 컨트롤러에서 필드로 선언했으므로), 강제로 null로 초기화하지 않는이상 null일 수 없음 절대로!
 			// 요소의 개수가 0개가 아닌지를 봐야함, 이건 메소드로 구현되어 있음 --> isEmpty()
+			
 			System.out.println("게시글이 아직 존재하지 않습니다.");
 			System.out.println();
 			System.out.println("첫 게시글의 주인공이 되어보세요~!");
@@ -395,14 +396,42 @@ public class IdolView {
 			for(Board board : boardList) {
 				System.out.print("글 번호 : " + board.getBoardNo() + "\t");
 				// 목록에서 내용은 보통 안보여주니까 내용은 상세보기 가서 하자
-				System.out.println("글 제목 : " + board.getBoardTitle() + "\t");
-				System.out.println("작성자 : " + board.getUserId() + "\t");
-				System.out.println("작성일 : " + board.getCreateDate());
+				System.out.print("글 제목 : " + board.getBoardTitle() + "\t");
+				System.out.print("작성자 : " + board.getUserId() + "\t");
+				System.out.print("작성일 : " + board.getCreateDate());
 				System.out.println();
 				// 여긴 스트링빌더를 썼어야함, 그게 올바른 판단이지 하지만 참겠음! 참을 수 있음!
 				
 			}
 			
+		}
+		
+	}
+	
+	private void findByBoardNo() {
+		
+		System.out.println("\n게시글 상세 보기 서비스 입니다.");
+		
+		selectBoardList();
+		
+		System.out.print("상세 보기를 할 번호를 입력해주세요 > "); // 번호 까먹을 수 있으니 상세보기 하기 전에 전체 출력해주고 보고 선택할 수 있도록 해주는 친절을 베풀어줌
+		int boardNo = sc.nextInt();
+		sc.nextLine();
+		
+		Board board = ic.findByBoardNo(boardNo); // 컨트롤러한테 이거 달라고 해서 받아야합니다~
+		
+		if(board != null) {
+			
+			System.out.println("==================================================");
+			System.out.println(boardNo + "번 게시글 상세보기");
+			// 4개 중에 하나 랜덤한 사진 캬 ! 이걸했으면.. 캬 이게 에스판데 ~ 이게 로켓펀쳔데~
+			// Map 사용해서 구현했으면 재밌었을텐데 선생님이 매우 아쉬워하심. 다음 기회에 Map을 쓰도록 하자!
+			System.out.println("\n제목" + board.getBoardTitle());
+			System.out.println("\n내용" + board.getBoardContent());
+			System.out.println("\n작성자 : " + board.getUserId() + "\t작성일 : " + board.getCreateDate());
+			
+		} else {
+			System.out.println(boardNo + "번 게시글은 존재하지 않습니다.");
 		}
 		
 	}
