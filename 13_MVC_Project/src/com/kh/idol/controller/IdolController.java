@@ -247,4 +247,14 @@ public class IdolController {
 		
 	}
 	
+	public List<Board> selectBoardList() {
+		
+		// View의 요청에 의해 호출되며,
+		// 게시글 목록이 담겨있는 것을 되돌려주어야함
+		// 되돌려줄거니까 뭐 써야해요? 일단 return 확정, 게시글 목록이 담긴 친구를 되돌려줘야함 어디 담겨있음? 보드들이 담길 수 있는 boards라는 리스트에 주소가
+		return boards; // 반환형 타입 맞춰주기
+		// 이러고 돌아감
+		
+	}
+	
 }

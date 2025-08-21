@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.kh.idol.controller.IdolController;
+import com.kh.idol.model.vo.Board;
 import com.kh.idol.model.vo.Fan;
 import com.kh.idol.model.vo.Idol;
 
@@ -311,7 +312,7 @@ public class IdolView {
 			// 아직 우리가 만들어진 게시글이 없으므로 어쩔 수 없이 작성부터 구현해야 할 듯
 			switch(menuNo) {
 			case 1 : post(); break;
-			case 2 : break;
+			case 2 : selectBoardList(); break; // 게시글 목록을 조회하고 싶은거
 			case 3 : break;
 			case 4 : return;
 			}
@@ -361,6 +362,47 @@ public class IdolView {
 			
 		} else { // null이면 로그인을 안한거지, 나가라고 해야함
 			System.out.println("로그인 후 이용가능한 서비스 입니다.");
+		}
+		
+	}
+	
+	private void selectBoardList() {
+		
+		System.out.println();
+		System.out.println("\n전체 게시글 목록입니다.");
+		System.out.println();
+		
+		// 사람마다 선호하는 메소드 네이밍 방식이 있음. 수업시간에는 이것저것 써보겠습니다.
+		// 제일 마음에 드는거 골라서 쓰세요~
+		// 지금은 근본 좋아하시는 분들이 좋아하는 근본론 이름 스타일
+		
+		// 게시글 목록을 출력해줄건데 얘혼자 여기서 뜬금없이 할 수 없음 --> 게시글 목록은 누가 가지고 있음? 컨트롤러가 가지고 있음 boards라는 리스트에 있음, 얘가 있어야 뷰가 게시글 출력할 수 있음
+		// 뷰가 주세요 해야한단말이야 --> 메소드 호출
+		List<Board> boardList = ic.selectBoardList(); // controller에 만들러감
+		// 컨트롤러 갔다가 돌아오면 boards가 돌아옴, board들이 담겨있는 List의 주소값이 오는 것
+		
+		// 뷰에 왔는데 이시점에 뭘 생각해야한다고요? --> 경우의 수! 게시글이 하나도 없을수도 있고 많을수도 있음
+		// 해줘야 하는 작업이 다름 --> if-else
+		if(boardList.isEmpty()) { // 뭘 봐야지 없는지 있는지 알 수 있음? null은 될 수 없는뎅? controller 생성해서 올릴때 객체를 생성해서 객체의 주소값이 들어감(boards를 컨트롤러에서 필드로 선언했으므로), 강제로 null로 초기화하지 않는이상 null일 수 없음 절대로!
+			// 요소의 개수가 0개가 아닌지를 봐야함, 이건 메소드로 구현되어 있음 --> isEmpty()
+			System.out.println("게시글이 아직 존재하지 않습니다.");
+			System.out.println();
+			System.out.println("첫 게시글의 주인공이 되어보세요~!");
+			
+		} else { // 여기 온다는건 게시글이 존재한다, 보드리스트에 존재하는 요소가 최소한 한개는 있다는 뜻, 몇개일지는 모르지만 다 보여줄것임
+			
+			// 그럼 반복문을 써야지!
+			for(Board board : boardList) {
+				System.out.print("글 번호 : " + board.getBoardNo() + "\t");
+				// 목록에서 내용은 보통 안보여주니까 내용은 상세보기 가서 하자
+				System.out.println("글 제목 : " + board.getBoardTitle() + "\t");
+				System.out.println("작성자 : " + board.getUserId() + "\t");
+				System.out.println("작성일 : " + board.getCreateDate());
+				System.out.println();
+				// 여긴 스트링빌더를 썼어야함, 그게 올바른 판단이지 하지만 참겠음! 참을 수 있음!
+				
+			}
+			
 		}
 		
 	}
