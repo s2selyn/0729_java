@@ -1,6 +1,8 @@
 package com.kh.idol.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.kh.idol.model.vo.Board;
@@ -17,6 +19,8 @@ public class IdolController {
 	
 	// 아이돌들 담아놔야지, 에스파가 솔로가수가 아니니까, 아이돌형 배열로 할까 리스트로 할까? 에스파 하다가 한명이 나가거나 들어올수도 있으니까 리스트가 맞지 않을까!
 	private List<Idol> aespa = new ArrayList();
+	
+	private int boardNo;
 	
 	// 사용하는 쪽을 위헤 제네릭 작성해줌, 컴파일 시점에 컴파일러가 이 타입을 알 수 있음, 다형성을 적용할 수 있어서 강제 형변환을 안해도됨!
 	
@@ -198,9 +202,49 @@ public class IdolController {
 			
 		}
 		
-		// for문을 다돌았는데 없었다면 존재안한다는뜻이니까 널값 반환
+		// for문을 다돌고 나왔다면 존재안한다는뜻이니까 널값 반환
 		return null;
 		
 	}
+	
+	// 로그인에 성공한 사용자가 게시글 작성 요청을 할 때 마다 호출이 되는 메소드
+	public void post(String boardTitle, String boardContent, String userId) {
 		
+		// 이 안에서는?
+		// 기존 boardNo 보다 1증가시킨 값과
+		// 사용자가 입력한 게시글 제목, 내용 값과
+		// 현재 로그인된 사용자의 아이디 값과
+		// 현재 게시글 작성 요청이 들어온 시간 값을 가지고
+		// Board객체를 만들어서 Board타입들이 들어가는 List의 요소로 추가
+		
+		// 1. 데이터 가공
+		// 넣어야 할 게 다섯개, 보드 모양으로 하나로 합쳐서 넣어야함, 세개는 이미 정해져있음
+		Board board = new Board();
+		board.setBoardTitle(boardTitle);
+		board.setBoardContent(boardContent);
+		board.setUserId(userId);
+		
+		// 제일 첨 글은 1, 기준점이 있어야 1 2 3 4 올리겠지
+		// 기준점이 지금 없음, 기존에 게시글이 하나라도 있으면 보드 리스트에서 마지막것을 뽑아서, 그것의 보드넘버를 뽑아서, 거기에 +1을 하면 값을 얻어낼 수 있겠지
+		// 지금은 게시글이 하나도 없어서 불가능, 기준점을 하나 만들어줘야함, 지역변수로 만든다면? 게시글 작성때마다 1번이 들어감.. 여기있으면 안될듯
+		// 어디다가 만들어요? 선택지 2개정도.. 1. 필드로 선언해서 사용(그럼 기본값이 0이니까 부를때마다 1씩 증가해서 들어갈 수 있음)
+		// 2. 스태틱에 올리는 방법(스태틱은 결국 다른애도 써야 의미가 있는건데 우리가 보드를 만들때만 쓰려고 하니까 이것보단 1번 ㄱ)
+		board.setBoardNo(++boardNo);
+		
+		// 날짜는? 어떻게함? LocalDateTime 이건 아직 안했는뎅ㅎ 예습을 너무 열심히 하신 듯. 나중에 배워요~
+		// 저번에 유틸에서 뭐 가져와서 했더라? Date? 이거하면 어떻게 나옴? wed aug 21 kst 17:xx어쩌고 나오겠지
+		// string으로 해놔서 Date 타입으로 못넣음.. 포맷으로 했던것같은데? 그냥 포맷은 아님 ㅎ
+		// 어떤 친구를 포맷팅하고싶은거지? 날짜형식의 값을 포맷팅하고싶은것이므로.. 단순하게 하고싶은것이므로.. 형식은 내맘대로고
+		String createDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(new Date()); // 이것도 데이터 가공이지, 내가 원하는 날짜 형식으로 사용할 수 있게끔
+		board.setCreateDate(createDate);
+		
+		// 데이터 가공 과정은 끝, 이제 해야 할 건 Board타입들이 들어가는 List의 요소로 추가
+		// 2. 요 청 처 리
+		boards.add(board);
+		// 원래 반환값 돌려야하는데 시간없어서 ㄱㄱ
+		// 3번 해야지. 근데 혼자서도 할 수 있겠지. 쟤도 boolean이라 true/false로 반환하면됨
+		// view로 돌아감
+		
+	}
+	
 }
