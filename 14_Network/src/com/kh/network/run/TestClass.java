@@ -15,5 +15,13 @@ public class TestClass {
 	public void hi() {
 		
 	}
+	
+	public void bye() {
+		System.out.println("급하다 급해");
+	}
+	
+	public void gogogo() {
+		System.out.println("한 시간 늦어서 빨리쳐야돼 늦었어");
+	}
 
 }
