@@ -58,7 +58,7 @@ public class Book {
 	// 객체의 정보를 리턴하는 메소드
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", author=" + author + ", category=" + category + ", price=" + price + "]";
+		return "\t\t(" + title + "/" + author + "/" + category + "/" + price + ")";
 	}
 	
 	// 해시코드를 리턴하는 메소드

@@ -34,14 +34,16 @@ public class BookMenu {
 		
 		while(true) {
 			
-			System.out.println("******* 메인 메뉴 *******");
+			System.out.println();
+			System.out.println("=====***** 메인 메뉴 *****=====");
 			System.out.println("1. 새 도서 추가");
 			System.out.println("2. 도서 전체 조회");
 			System.out.println("3. 도서 검색 조회");
 			System.out.println("4. 도서 삭제");
 			System.out.println("5. 도서 명 오름차순 정렬");
 			System.out.println("9. 종료");
-			System.out.print("메뉴 번호 선택 : >> ");
+			System.out.println();
+			System.out.print("메뉴 번호 입력 : ");
 			int menuNo = sc.nextInt();
 			sc.nextLine();
 			
@@ -74,13 +76,16 @@ public class BookMenu {
 		6. bc(BookController)의 insertBook으로 위의 Book 객체 전달
 		*/
 		
-		System.out.print("1. 도서명 입력");
+		System.out.println("===== 새 도서 추가 =====");
+		System.out.println("책 정보를 입력해주세요.");
+		
+		System.out.print("도서 명 : ");
 		String title = sc.nextLine();
 		
-		System.out.print("2. 저자명 입력");
+		System.out.print("저자 명 : ");
 		String author = sc.nextLine();
 		
-		System.out.print("3. 장르 입력 --> 숫자로 입력 (1.인문 / 2.자연과학 / 3.의료 / 4.기타)");
+		System.out.print("장르(1.인문 / 2.자연과학 / 3.의료 / 4.기타) : ");
 		int categoryNo = sc.nextInt();
 		sc.nextLine();
 		
@@ -104,7 +109,7 @@ public class BookMenu {
 		case 4 : category = "기타"; break;
 		}
 		
-		System.out.print("4. 가격 입력");
+		System.out.print("가격 : ");
 		int price = sc.nextInt();
 		sc.nextLine();
 		
@@ -133,7 +138,10 @@ public class BookMenu {
 		} else {
 			
 			for(int i = 0; i < bookList.size(); i++) {
+				
+				System.out.println("===== 도서 전체 조회 =====");
 				System.out.println(bookList.get(i).toString());
+				
 			}
 			
 		}
@@ -156,7 +164,8 @@ public class BookMenu {
 		    3_2. searchList가 "비어있지 않은 경우" --> 반복문으로 searchList 안의 Book 객체들 출력
 		*/
 		
-		System.out.print("검색할 도서명 키워드로 입력");
+		System.out.println("===== 도서 검색 =====");
+		System.out.print("검색 키워드 : ");
 		String keyword = sc.nextLine();
 		
 		ArrayList<Book> searchList = bc.searchBook(keyword);
@@ -189,10 +198,11 @@ public class BookMenu {
 		    4_2. remove가 존재하지 않은 경우 --> "삭제할 도서를 찾지 못했습니다."라는 문구 출력
 		*/
 		
-		System.out.print("삭제할 도서명 입력");
+		System.out.println("===== 도서 삭제 =====");
+		System.out.print("삭제할 도서 명 : ");
 		String title = sc.nextLine();
 		
-		System.out.print("삭제할 저자명 입력");
+		System.out.print("삭제할 저자 명 : ");
 		String author = sc.nextLine();
 		
 		Book remove = bc.deleteBook(title, author);
