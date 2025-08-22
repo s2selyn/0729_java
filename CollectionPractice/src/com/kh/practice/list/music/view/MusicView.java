@@ -223,6 +223,15 @@ public class MusicView {
 		// MusicController에 ascTitle()의 값에 따라 성공 시 “정렬 성공”, 실패 시 “정렬 실패”
 		*/
 		
+		System.out.println("****** 곡 명 오름차순 정렬 ******");
+		int result = mc.ascTitle();
+		
+		if(result == 1) {
+			System.out.println("정렬 성공");
+		} else {
+			System.out.println("정렬 실패");
+		}
+		
 	}
 	
 	// 가수 명 내림차순 정렬 성공을 알리는 메소드
@@ -232,6 +241,15 @@ public class MusicView {
 		****** 가수 명 내림차순 정렬 ****** 
 		// musicController에 descSinger()의 값에 따라 성공 시 “정렬 성공”, 실패 시 “정렬 실패”
 		*/
+		
+		System.out.println();
+		int result = mc.descSinger();
+		
+		if(result == 1) {
+			System.out.println("정렬 성공");
+		} else {
+			System.out.println("정렬 실패");
+		}
 		
 	}
 
