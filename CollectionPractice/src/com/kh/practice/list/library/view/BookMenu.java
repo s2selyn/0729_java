@@ -3,6 +3,7 @@ package com.kh.practice.list.library.view;
 import java.util.Scanner;
 
 import com.kh.practice.list.library.controller.BookController;
+import com.kh.practice.list.library.model.vo.Book;
 
 public class BookMenu {
 	
@@ -63,9 +64,55 @@ public class BookMenu {
 		
 	}
 	
-	// 도서 추가를 위해 정보를 받는 메소드 
+	// 도서 추가를 위해 정보를 받는 메소드
+	// 1. 새 도서 추가용 view 메소드
 	public void insertBook() {
 		
+		/*
+		1. 도서명 입력받기 (String title) 
+		2. 저자명 입력받기 (String author) 
+		3. 장르 입력받기 (int category) --> 숫자로 입력받기 (1.인문 / 2.자연과학 / 3.의료 / 4.기타) 
+		4. 가격 입력받기 (int price) 
+		5. 매개변수 생성자를 이용하여 Book 객체 생성  
+		(객체 생성 시 장르 번호 별로 조건식 이용해 장르번호가 아닌 장르 명으로 값 넘겨야 함) 
+		6. bc(BookController)의 insertBook으로 위의 Book 객체 전달
+		*/
+		
+		System.out.print("1. 도서명 입력");
+		String title = sc.nextLine();
+		
+		System.out.print("2. 저자명 입력");
+		String author = sc.nextLine();
+		
+		System.out.print("3. 장르 입력 --> 숫자로 입력 (1.인문 / 2.자연과학 / 3.의료 / 4.기타)");
+		int categoryNo = sc.nextInt();
+		String category = null;
+		sc.nextLine();
+		/*
+		if(categoryNo == 1) {
+			category = "인문";
+		} else if(categoryNo == 2) {
+			category = "자연과학";
+		} else if(categoryNo == 3) {
+			category = "의료";
+		} else {
+			category = "기타";
+		}
+		*/
+		
+		switch(categoryNo) {
+		case 1 : category = "인문"; break;
+		case 2 : category = "자연과학"; break;
+		case 3 : category = "의료"; break;
+		case 4 : category = "기타"; break;
+		}
+		
+		System.out.print("4. 가격 입력");
+		int price = sc.nextInt();
+		
+		Book book = new Book(title, author, category, price);
+		
+		bc.insertBook(book);
 		
 	}
 	
