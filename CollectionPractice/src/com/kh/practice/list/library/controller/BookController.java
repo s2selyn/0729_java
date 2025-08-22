@@ -8,7 +8,7 @@ import com.kh.practice.list.library.model.vo.Book;
 public class BookController {
 	
 	// ArrayList 객체 생성
-	List list = new ArrayList();
+	List<Book> list = new ArrayList();
 	
 	// 초기 값을 넣어줄 기본 생성자
 	public BookController() {
@@ -55,7 +55,7 @@ public class BookController {
 		
 		for(int i = 0; i < list.size(); i++) {
 			
-			Book book = (Book)list.get(i);
+			Book book = list.get(i);
 			
 			if(book.getTitle().contains(keyword)) {
 				searchList.add(list.get(i));
@@ -79,11 +79,11 @@ public class BookController {
 		
 		for(int i = 0; i < list.size(); i++) {
 			
-			Book book = (Book)list.get(i);
+			Book book = list.get(i);
 			
 			if(title.equals(book.getTitle()) && author.equals(book.getAuthor())) {
 				
-				removeBook = (Book)list.get(i);
+				removeBook = list.get(i);
 				list.remove(i);
 				break;
 				
