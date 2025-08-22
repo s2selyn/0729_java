@@ -82,8 +82,9 @@ public class BookMenu {
 		
 		System.out.print("3. 장르 입력 --> 숫자로 입력 (1.인문 / 2.자연과학 / 3.의료 / 4.기타)");
 		int categoryNo = sc.nextInt();
-		String category = null;
 		sc.nextLine();
+		
+		String category = null;
 		/*
 		if(categoryNo == 1) {
 			category = "인문";
@@ -105,6 +106,7 @@ public class BookMenu {
 		
 		System.out.print("4. 가격 입력");
 		int price = sc.nextInt();
+		sc.nextLine();
 		
 		Book book = new Book(title, author, category, price);
 		

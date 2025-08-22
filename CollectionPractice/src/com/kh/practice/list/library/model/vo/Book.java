@@ -15,6 +15,11 @@ public class Book {
 	// 매개변수가 있는 생성자
 	public Book(String title, String author, String category, int price) {
 		
+		this.title = title;
+		this.author = author;
+		this.category = category;
+		this.price = price;
+		
 	}
 	
 	// setter() / getter()

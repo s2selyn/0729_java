@@ -1,6 +1,7 @@
 package com.kh.practice.list.library.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.kh.practice.list.library.model.vo.Book;
 
@@ -31,7 +32,7 @@ public class BookController {
 	public void insertBook(Book bk) {
 		
 		//전달 받은 bk를 bookList에 추가
-		bookList.add(bk);
+		list.add(bk);
 		
 	}
 	
