@@ -75,6 +75,19 @@ public class MusicController {
 	public Music setMusic(String title, Music music) {
 		
 		// 곡 명으로 객체 검색, 객체가 있으면 객체 정보 수정, 없으면 null 리턴
+		for(int i = 0; i < list.size(); i++) {
+			
+			Music searchMusic = (Music)list.get(i);
+			
+			if(title.equals(searchMusic.getTitle())) {
+				
+				this.setMusic(title, music);
+				return searchMusic;
+				
+			}
+			
+		}
+		
 		return null;
 		
 	}

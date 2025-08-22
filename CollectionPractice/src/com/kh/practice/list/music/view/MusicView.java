@@ -193,6 +193,26 @@ public class MusicView {
 		// 수정 했으면 “000(곡 명, 가수 명)의 값이 변경 되었습니다.” 콘솔 창에 출력
 		 */
 		
+		System.out.println("****** 특정 곡 정보 수정 ******");
+		System.out.print("수정할 곡");
+		String title = sc.nextLine();
+		
+		System.out.print("수정할 곡 명");
+		String newTitle = sc.nextLine();
+		
+		System.out.print("수정할 가수 명");
+		String newSinger = sc.nextLine();
+		
+		Music newMusic = new Music(newTitle, newSinger);
+		
+		Music setMusic = mc.setMusic(newTitle, newMusic);
+		
+		if(setMusic == null) {
+			System.out.println("수정할 곡이 없습니다.");
+		} else {
+			System.out.println(setMusic.getTitle() + ", " + setMusic.getSinger() + "(곡 명, 가수 명)의 값이 변경 되었습니다.");
+		}
+		
 	}
 	
 	// 곡 명 오름차순 정렬 성공을 알리는 메소드
