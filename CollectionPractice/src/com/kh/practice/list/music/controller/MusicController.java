@@ -32,7 +32,7 @@ public class MusicController {
 	public List printAll() {
 		
 		// List 반환
-		return null;
+		return list;
 		
 	}
 	

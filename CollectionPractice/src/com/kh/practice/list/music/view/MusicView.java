@@ -130,7 +130,7 @@ public class MusicView {
 		
 		System.out.println("****** 전체 곡 목록 출력 ******");
 		List list = mc.printAll();
-		System.out.println(list);
+		System.out.println(list.toString());
 		
 	}
 	
