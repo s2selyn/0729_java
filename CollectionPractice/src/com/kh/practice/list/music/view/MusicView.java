@@ -46,7 +46,7 @@ public class MusicView {
 			System.out.println("8. 가수명 내림차순 정렬");
 			System.out.println("9. 종료");
 			System.out.print("메뉴 번호 입력 : ");
-			int menuNo = sc.nextInt();
+			int menuNo = sc.nextInt(); // 예외처리 해야함
 			sc.nextLine();
 			
 			switch(menuNo) {

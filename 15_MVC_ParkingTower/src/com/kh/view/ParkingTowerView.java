@@ -22,7 +22,8 @@ public class ParkingTowerView {
 			System.out.println("0. 프로그램 종료하기");
 			
 			System.out.print("메뉴 선택 : ");
-			int menuNo = sc.nextInt();
+			
+			int menuNo = sc.nextInt(); // 예외처리 해야함
 			sc.nextLine();
 			
 			switch(menuNo) {
@@ -43,11 +44,11 @@ public class ParkingTowerView {
 		System.out.println("차량을 주차합니다.");
 		
 		System.out.print("주차하실 차량의 번호를 입력해주세요 : ");
-		int carNum = sc.nextInt();
+		int carNum = sc.nextInt(); // 예외처리 해야함
 		sc.nextLine();
 		
 		System.out.print("주차하실 차량의 종류를 선택해주세요(1. 경차 / 2. 세단 / 3. SUV / 4. 트럭) : ");
-		int carType = sc.nextInt();
+		int carType = sc.nextInt(); // 예외처리 해야함
 		sc.nextLine();
 		
 		System.out.print("소유주를 입력해주세요 : ");
@@ -63,7 +64,7 @@ public class ParkingTowerView {
 		System.out.println("차량을 출차합니다.");
 		
 		System.out.print("출차하실 차량의 번호를 입력해주세요 : ");
-		int carNum = sc.nextInt();
+		int carNum = sc.nextInt(); // 예외처리 해야함
 		sc.nextLine();
 		
 		int result = ptc.deleteCar(carNum);

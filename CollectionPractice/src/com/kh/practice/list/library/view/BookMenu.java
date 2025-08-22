@@ -44,7 +44,7 @@ public class BookMenu {
 			System.out.println("9. 종료");
 			System.out.println();
 			System.out.print("메뉴 번호 입력 : ");
-			int menuNo = sc.nextInt();
+			int menuNo = sc.nextInt(); // 예외처리 해야함?
 			sc.nextLine();
 			
 			switch(menuNo) {
@@ -86,7 +86,7 @@ public class BookMenu {
 		String author = sc.nextLine();
 		
 		System.out.print("장르(1.인문 / 2.자연과학 / 3.의료 / 4.기타) : ");
-		int categoryNo = sc.nextInt();
+		int categoryNo = sc.nextInt(); // 예외처리 해야함
 		sc.nextLine();
 		
 		String category = null;
