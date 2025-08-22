@@ -67,7 +67,22 @@ public class BookController {
 	// 책 제목과 저자 명으로 책을 삭제하는 메소드
 	public Book deleteBook(String title, String author) {
 		
-		return null;
+		// 삭제된 도서를 담을 Book객체 (Book removeBook) 선언 및 null로 초기화 
+		// 반복문을 통해 bookList의 책 중 책 명이 전달 받은 title과 동일하고 
+		// 저자 명이 전달 받은 author와 동일한 경우 해당 인덱스 도서 삭제 후 빠져나감  
+		// 이 때 해당 인덱스 도서를 removeBook에 대입 후 removeBook 반환
+		
+		Book removeBook = null;
+		
+		for(int i = 0; i < bookList.size(); i++) {
+			
+			if(title.equals(bookList.get(i))) {
+				
+			}
+			
+		}
+		
+		return removeBook;
 		
 	}
 	

@@ -2,6 +2,11 @@ package com.kh.practice.list.library.model.vo;
 
 public class Book {
 	
+	private String title;
+	private String author;
+	private String category;
+	private int price;
+	
 	public Book() {
 		
 		// 기본 생성자
@@ -13,6 +18,8 @@ public class Book {
 		// 매개변수가 있는 생성자
 		
 	}
+	
+	// 
 	
 	public String toString() {
 		
