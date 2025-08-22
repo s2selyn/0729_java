@@ -209,8 +209,21 @@ public class BookMenu {
 	}
 	
 	// 책 명 오름차순 정렬 성공을 알리는 메소드
+	// 5. 도서 명 오름차순 정렬용 view 메소드
 	public void ascBook() {
 		
+		/*
+		bc(BookController)의 ascBook() 메소드 값에 따라  
+		성공 시 “정렬에 성공하였습니다.”, 실패 시 “정렬에 실패하였습니다.” 출력
+		*/
+		
+		int result = bc.ascBook();
+		
+		if(result == 1) {
+			System.out.println("정렬에 성공하였습니다.");
+		} else {
+			System.out.println("정렬에 실패하였습니다.");
+		}
 		
 	}
 	
