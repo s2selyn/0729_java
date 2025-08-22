@@ -8,7 +8,7 @@ import com.kh.practice.list.music.model.vo.Music;
 public class MusicController {
 	
 	// ArrayList 객체 생성
-	List list = new ArrayList();
+	List<Music> list = new ArrayList();
 	
 	// 리스트 마지막에 값 저장 메소드
 	public int addList(Music music) {
@@ -29,7 +29,7 @@ public class MusicController {
 	}
 	
 	// 모든 리스트를 반환하는 메소드
-	public List printAll() {
+	public List<Music> printAll() {
 		
 		// List 반환
 		return list;
@@ -42,7 +42,7 @@ public class MusicController {
 		// 곡 명으로 객체 검색, 객체가 있으면 객체 정보 리턴, 없으면 null 리턴
 		for(int i = 0; i < list.size(); i++) {
 			
-			Music music = (Music)list.get(i);
+			Music music = list.get(i);
 			
 			if(title.equals(music.getTitle())) {
 				return music;
@@ -60,7 +60,7 @@ public class MusicController {
 		// 곡 명으로 객체 검색, 객체가 있으면 객체 정보 삭제, 없으면 null 리턴
 		for(int i = 0; i < list.size(); i++) {
 			
-			Music music = (Music)list.get(i);
+			Music music = list.get(i);
 			
 			if(title.equals(music.getTitle())) {
 				
@@ -80,7 +80,7 @@ public class MusicController {
 		// 곡 명으로 객체 검색, 객체가 있으면 객체 정보 수정, 없으면 null 리턴
 		for(int i = 0; i < list.size(); i++) {
 			
-			Music searchMusic = (Music)list.get(i);
+			Music searchMusic = list.get(i);
 			
 			if(title.equals(searchMusic.getTitle())) {
 				
