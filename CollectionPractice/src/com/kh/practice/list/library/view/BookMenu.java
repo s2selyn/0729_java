@@ -177,8 +177,34 @@ public class BookMenu {
 	}
 	
 	// 특정 도서 삭제 성공을 알리는 메소드 
+	// 4. 도서 삭제용 view 메소드
 	public void deleteBook() {
 		
+		/*
+		1. 삭제할 도서명 입력 받기 (String title) 
+		  2. 삭제할 저자명 입력 받기 (String author)  
+		  ** 도서명과 저자명을 같이 입력 받는 이유 
+		      --> 같은 도서명이라고 해도 저자명이 다른 도서가 있을 수 있기 때문에 
+		  3. bc(BookConroller)의 deleteBook() 메소드로 위의 title, autor 값 전달 후 
+		   --> 결과 값을 임의의 Book(Book remove)에 대입 
+		  4. 조건식 이용해서 
+		    4_1. remove가 존재하는 경우 --> "성공적으로 삭제되었습니다."라는 문구 출력 
+		    4_2. remove가 존재하지 않은 경우 --> "삭제할 도서를 찾지 못했습니다."라는 문구 출력
+		*/
+		
+		System.out.print("삭제할 도서명 입력");
+		String title = sc.nextLine();
+		
+		System.out.print("삭제할 저자명 입력");
+		String author = sc.nextLine();
+		
+		Book remove = bc.deleteBook(title, author);
+		
+		if(remove != null) {
+			System.out.println("성공적으로 삭제되었습니다.");
+		} else {
+			System.out.println("삭제할 도서를 찾지 못했습니다.");
+		}
 		
 	}
 	
