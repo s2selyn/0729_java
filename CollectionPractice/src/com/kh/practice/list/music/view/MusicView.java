@@ -144,6 +144,18 @@ public class MusicView {
 		// 반환 값이 있으면 “검색한 곡은 000(곡 명, 가수 명) 입니다.” 콘솔 창에 출력
 		*/
 		
+		System.out.println("****** 특정 곡 검색 ******");
+		System.out.print("곡 이름");
+		String title = sc.nextLine();
+		
+		Music result = mc.searchMusic(title);
+		
+		if(result != null) {
+			System.out.println("검색한 곡은 " + result.getTitle() + result.getSinger() + "(곡 명, 가수 명) 입니다.");
+		} else {
+			System.out.println("검색한 곡이 없습니다.");
+		}
+		
 	}
 	
 	// 특정 곡 삭제 결과를 보여주는 메소드

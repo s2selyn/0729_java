@@ -40,6 +40,16 @@ public class MusicController {
 	public Music searchMusic(String title) {
 		
 		// 곡 명으로 객체 검색, 객체가 있으면 객체 정보 리턴, 없으면 null 리턴
+		for(int i = 0; i < list.size(); i++) {
+			
+			Music music = (Music)list.get(i);
+			
+			if(title.equals(music.getTitle())) {
+				return music;
+			}
+			
+		}
+		
 		return null;
 		
 	}
