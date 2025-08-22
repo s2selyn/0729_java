@@ -38,7 +38,8 @@ public class BookController {
 	// 모든 리스트를 출력하는 메소드
 	public ArrayList selectList() {
 		
-		return null;
+		// 해당 bookList의 주소 값 반환
+		return bookList;
 		
 	}
 	
