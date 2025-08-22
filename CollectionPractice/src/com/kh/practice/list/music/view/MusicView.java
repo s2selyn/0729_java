@@ -151,7 +151,7 @@ public class MusicView {
 		Music result = mc.searchMusic(title);
 		
 		if(result != null) {
-			System.out.println("검색한 곡은 " + result.getTitle() + result.getSinger() + "(곡 명, 가수 명) 입니다.");
+			System.out.println("검색한 곡은 " + result.getTitle() + ", " + result.getSinger() + "(곡 명, 가수 명) 입니다.");
 		} else {
 			System.out.println("검색한 곡이 없습니다.");
 		}
@@ -167,6 +167,18 @@ public class MusicView {
 		// 값을 넘긴다. removeMusic()의 반환 값에 따라 반환 값이 없으면 “ 삭제할 곡이 없습니다.” 
 		// 반환 값이 있으면 “000(곡 명, 가수 명)을 삭제 했습니다” 콘솔 창에 출력
 		*/
+		
+		System.out.println("****** 특정 곡 삭제 ******");
+		System.out.print("삭제할 곡의 이름");
+		String title = sc.nextLine();
+		
+		Music result = mc.removeMusic(title);
+		
+		if(result == null) {
+			System.out.println("삭제할 곡이 없습니다.");
+		} else {
+			System.out.println(result.getTitle() + ", " + result.getSinger() + "(곡 명, 가수 명)을 삭제 했습니다");
+		}
 		
 	}
 	
