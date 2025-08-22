@@ -112,7 +112,7 @@ public class MusicView {
 		Music music = new Music(title, singer);
 		int result = mc.addAtZero(music);
 		
-		if(result != 0) {
+		if(result == 1) {
 			System.out.println("추가 성공");
 		} else {
 			System.out.println("추가 실패");
