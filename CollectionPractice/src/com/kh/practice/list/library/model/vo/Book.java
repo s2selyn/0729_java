@@ -56,10 +56,9 @@ public class Book {
 	}
 	
 	// 객체의 정보를 리턴하는 메소드
+	@Override
 	public String toString() {
-		
-		return null;
-		
+		return "Book [title=" + title + ", author=" + author + ", category=" + category + ", price=" + price + "]";
 	}
 	
 	// 해시코드를 리턴하는 메소드

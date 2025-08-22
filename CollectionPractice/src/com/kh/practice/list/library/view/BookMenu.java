@@ -133,7 +133,7 @@ public class BookMenu {
 		} else {
 			
 			for(int i = 0; i < bookList.size(); i++) {
-				System.out.println(bookList.get(i));
+				System.out.println(bookList.get(i).toString());
 			}
 			
 		}
