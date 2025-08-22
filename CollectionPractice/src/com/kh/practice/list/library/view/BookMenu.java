@@ -1,5 +1,6 @@
 package com.kh.practice.list.library.view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.kh.practice.list.library.controller.BookController;
@@ -117,8 +118,28 @@ public class BookMenu {
 	}
 	
 	// 전체 도서 목록 출력 성공을 알리는 메소드 
+	// 2. 도서 전체용 view 메소드
 	public void selectList() {
 		
+		/*
+		1. bc(BookController)의 selectList() 메소드를 호출 후 
+	     --> 결과 값을 임의의 리스트(ArrayList<Book> bookList)에 대입 
+	  2. 조건식 이용해서  
+	    2_1. bookList가 "비어있는 경우" --> "존재하는 도서가 없습니다." 라는 알람 문구 출력 
+	    2_2. bookList가 "비어있지 않은 경우" --> 반복문을 통해 bookList 안의 Book 객체들 출력
+		*/
+		
+		ArrayList<Book> bookList = bc.selectList();
+		
+		if(bookList.isEmpty()) {
+			System.out.println("존재하는 도서가 없습니다.");
+		} else {
+			
+			for(int i = 0; i < bookList.size(); i++) {
+				System.out.println(bookList.get(i));
+			}
+			
+		}
 		
 	}
 	
