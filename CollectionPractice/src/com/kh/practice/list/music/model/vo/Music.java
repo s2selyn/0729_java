@@ -8,7 +8,6 @@ public class Music {
 	// 기본 생성자
 	public Music() {
 		
-		
 	}
 	
 	// 매개변수가 있는 생성자
@@ -39,7 +38,7 @@ public class Music {
 	// 객체의 정보를 리턴하는 메소드
 	@Override
 	public String toString() {
-		return "Music [title=" + title + ", singer=" + singer + "]";
+		return singer + " - " + title;
 	}
 	
 	// 해시코드 오버라이딩한 메소드
