@@ -35,10 +35,9 @@ public class Music {
 	}
 	
 	// 객체의 정보를 리턴하는 메소드
+	@Override
 	public String toString() {
-		
-		return null;
-		
+		return "Music [title=" + title + ", singer=" + singer + "]";
 	}
 	
 	// 해시코드 오버라이딩한 메소드
