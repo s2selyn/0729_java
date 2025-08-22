@@ -17,6 +17,23 @@ public class Music {
 		
 	}
 	
+	// setter() / getter()
+	private void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public void setSinger(String singer) {
+		this.singer = singer;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public String getSinger() {
+		return singer;
+	}
+	
 	// 객체의 정보를 리턴하는 메소드
 	public String toString() {
 		

@@ -7,7 +7,7 @@ import com.kh.practice.list.library.model.vo.Book;
 public class BookController {
 	
 	// ArrayList 객체 생성
-	ArrayList bookList = new ArrayList();
+	List list = new ArrayList();
 	
 	// 초기 값을 넣어줄 기본 생성자
 	public BookController() {
