@@ -1,15 +1,20 @@
 package com.kh.practice.list.music.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.kh.practice.list.music.model.vo.Music;
 
 public class MusicController {
 	
+	// ArrayList 객체 생성
+	List list = new ArrayList();
+	
 	// 리스트 마지막에 값 저장 메소드
 	public int addList(Music music) {
 		
-		return 0;
+		list.add(music);
+		return list.size();
 		
 	}
 	
