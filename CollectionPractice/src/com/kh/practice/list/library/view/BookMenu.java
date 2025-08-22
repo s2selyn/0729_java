@@ -144,8 +144,35 @@ public class BookMenu {
 	}
 	
 	// 특정 도서 검색 결과를 보여주는 메소드
+	// 3. 도서 검색용 view 메소드
 	public void searchBook() {
 		
+		/*
+		 1. 검색할 도서명 키워드로 입력 받기 (String keyword)  
+		  2. bc(BookController)의 searchBook() 메소드로 위의 keyword 값 전달 후   
+		     --> 결과 값을 임의의 리스트(ArrayList<Book> searchList)에 대입 
+		     ** 결과 값이 한 도서의 Book 객체가 아니라 리스트인 이유 
+		        보통 프로그램에서 검색 할 때 풀 네임을 쳐서 검색하지 않고 키워드로 검색 
+		        즉, 키워드를 포함한 결과가 하나가 아닌 여러 개일 수 있기 때문에 리스트로 받기 
+		  3. 조건식 이용해서 
+		    3_1. searchList가 "비어있는 경우" --> "검색 결과가 없습니다."라는 알람 문구 출력 
+		    3_2. searchList가 "비어있지 않은 경우" --> 반복문으로 searchList 안의 Book 객체들 출력
+		*/
+		
+		System.out.print("검색할 도서명 키워드로 입력");
+		String keyword = sc.nextLine();
+		
+		ArrayList<Book> searchList = bc.searchBook(keyword);
+		
+		if(searchList.isEmpty()) {
+			System.out.println("검색 결과가 없습니다.");
+		} else {
+			
+			for(int i = 0; i < searchList.size(); i++) {
+				System.out.println(searchList.get(i));
+			}
+			
+		}
 		
 	}
 	
