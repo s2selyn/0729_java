@@ -63,7 +63,10 @@ public class MusicController {
 			Music music = (Music)list.get(i);
 			
 			if(title.equals(music.getTitle())) {
+				
+				list.remove(i);
 				return music;
+				
 			}
 			
 		}
@@ -81,7 +84,8 @@ public class MusicController {
 			
 			if(title.equals(searchMusic.getTitle())) {
 				
-				this.setMusic(title, music);
+				searchMusic.setTitle(music.getTitle());
+				searchMusic.setSinger(music.getSinger());
 				return searchMusic;
 				
 			}

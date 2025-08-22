@@ -14,11 +14,13 @@ public class Music {
 	// 매개변수가 있는 생성자
 	public Music(String title, String singer) {
 		
+		this.title = title;
+		this.singer = singer;
 		
 	}
 	
 	// setter() / getter()
-	private void setTitle(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 	

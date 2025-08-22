@@ -205,7 +205,7 @@ public class MusicView {
 		
 		Music newMusic = new Music(newTitle, newSinger);
 		
-		Music setMusic = mc.setMusic(newTitle, newMusic);
+		Music setMusic = mc.setMusic(title, newMusic);
 		
 		if(setMusic == null) {
 			System.out.println("수정할 곡이 없습니다.");
