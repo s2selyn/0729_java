@@ -30,6 +30,8 @@ public class BookController {
 	// 리스트에 값 저장 메소드
 	public void insertBook(Book bk) {
 		
+		//전달 받은 bk를 bookList에 추가
+		bookList.add(bk);
 		
 	}
 	
