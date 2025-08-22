@@ -49,6 +49,7 @@ public class BookMenu {
 			System.out.println("9. 종료");
 			System.out.print("메뉴 번호 선택 : >> ");
 			int menuNo = sc.nextInt();
+			sc.nextLine();
 			
 			switch(menuNo) {
 			case 1 : insertBook(); break;
