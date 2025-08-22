@@ -76,7 +76,10 @@ public class BookController {
 		
 		for(int i = 0; i < bookList.size(); i++) {
 			
-			if(title.equals(bookList.get(i))) {
+			if(title.equals(bookList.get(i)) && author.equals(bookList.get(i))) {
+				
+				bookList.remove(i);
+				removeBook = (Book)bookList.get(i);
 				
 			}
 			
