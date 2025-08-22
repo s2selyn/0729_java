@@ -46,7 +46,21 @@ public class BookController {
 	// 키워드로 책을 검색하는 메소드
 	public ArrayList searchBook(String keyword) {
 		
-		return null;
+		// 검색 결과 리스트를 담아줄 리스트(ArrayList searchList) 선언 및 생성 
+		// 반복문을 통해 list의 책 중 책 명에 전달 받은 keyword가 포함되어있는 경우 
+		// searchList에 해당 책 추가하고 searchList 반환
+		
+		ArrayList searchList = new ArrayList();
+		
+		for(int i = 0; i < bookList.size(); i++) {
+			
+			if(bookList.contains(keyword)) {
+				searchList.add(bookList.get(i));
+			}
+			
+		}
+		
+		return searchList;
 		
 	}
 	
