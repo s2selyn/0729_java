@@ -166,7 +166,7 @@ public class BookMenu {
 		} else {
 			
 			for(int i = 0; i < searchList.size(); i++) {
-				System.out.println(searchList.get(i));
+				System.out.println(searchList.get(i).toString());
 			}
 			
 		}
