@@ -21,7 +21,8 @@ public class MusicController {
 	// 리스트 첫 번째에 값 저장 메소드
 	public int addAtZero(Music music) {
 		
-		return 0;
+		list.addFirst(music);
+		return list.size();
 		
 	}
 	

@@ -1,5 +1,6 @@
 package com.kh.practice.list.music.view;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.kh.practice.list.music.controller.MusicController;
@@ -83,7 +84,7 @@ public class MusicView {
 		Music music = new Music(title, singer);
 		int result = mc.addList(music);
 		
-		if(result == 1) {
+		if(result != 0) {
 			System.out.println("추가 성공");
 		} else {
 			System.out.println("추가 실패");
@@ -94,12 +95,42 @@ public class MusicView {
 	// 첫 위치에 곡 추가 성공을 알리는 하는 메소드
 	public void addAtZero() {
 		
+		/*
+		****** 첫 위치에 곡 추가 ****** 
+		// 곡 명과 가수 명을 사용자에게 입력 받는다. 
+		// MusicController에 addAtZero()를 이용해서 입력한 정보를 넘기고 
+		// 추가 성공 시 “추가 성공”, 추가 실패 시 “추가 실패” 콘솔 창에 출력
+		*/
+		
+		System.out.println("****** 첫 위치에 곡 추가 ******");
+		System.out.print("곡 명");
+		String title = sc.nextLine();
+		
+		System.out.print("가수 명");
+		String singer = sc.nextLine();
+		
+		Music music = new Music(title, singer);
+		int result = mc.addAtZero(music);
+		
+		if(result != 0) {
+			System.out.println("추가 성공");
+		} else {
+			System.out.println("추가 실패");
+		}
 		
 	}
 	
 	// 전체 곡 목록을 출력 성공을 알리는 메소드
 	public void printAll() {
 		
+		/*
+		****** 전체 곡 목록 출력 ****** 
+		// MusicController에 printAll() 반환 값을 출력한다.
+		*/
+		
+		System.out.println("****** 전체 곡 목록 출력 ******");
+		List list = mc.printAll();
+		System.out.println(list);
 		
 	}
 	

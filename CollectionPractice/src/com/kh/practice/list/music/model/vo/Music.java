@@ -5,42 +5,42 @@ public class Music {
 	private String title;
 	private String singer;
 	
+	// 기본 생성자
 	public Music() {
 		
-		// 기본 생성자
 		
 	}
 	
+	// 매개변수가 있는 생성자
 	public Music(String title, String singer) {
 		
-		// 매개변수가 있는 생성자
 		
 	}
 	
+	// 객체의 정보를 리턴하는 메소드
 	public String toString() {
 		
-		// 객체의 정보를 리턴하는 메소드
 		return null;
 		
 	}
 	
+	// 해시코드 오버라이딩한 메소드
 	public int hashCode() {
 		
-		// 해시코드 오버라이딩한 메소드
 		return 0;
 		
 	}
 	
+	// equals 오버라이딩한 메소드
 	public boolean equals(Object o) {
 		
-		// equals 오버라이딩한 메소드
 		return false;
 		
 	}
 	
+	// 정렬 기준을 가지고 있는 메소드
 	public int compareTo(Object o) {
 		
-		// 정렬 기준을 가지고 있는 메소드
 		return 0;
 		
 	}
