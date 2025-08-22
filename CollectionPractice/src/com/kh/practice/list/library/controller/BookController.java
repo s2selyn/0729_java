@@ -21,10 +21,10 @@ public class BookController {
 		bookList.add(new Book("암 정복기", "박신우", "의료", 21000));
 		*/
 		
-		bookList.add(new Book("자바의 정석", "남궁 성", "기타", 20000));
-		bookList.add(new Book("쉽게 배우는 알고리즘", "문병로", "기타", 15000));
-		bookList.add(new Book("대화의 기술", "강보람", "인문", 17500));
-		bookList.add(new Book("암 정복기", "박신우", "의료", 21000));
+		list.add(new Book("자바의 정석", "남궁 성", "기타", 20000));
+		list.add(new Book("쉽게 배우는 알고리즘", "문병로", "기타", 15000));
+		list.add(new Book("대화의 기술", "강보람", "인문", 17500));
+		list.add(new Book("암 정복기", "박신우", "의료", 21000));
 		
 	}
 	
@@ -40,7 +40,7 @@ public class BookController {
 	public ArrayList selectList() {
 		
 		// 해당 bookList의 주소 값 반환
-		return bookList;
+		return (ArrayList)list;
 		
 	}
 	
@@ -83,8 +83,9 @@ public class BookController {
 			
 			if(title.equals(book.getTitle()) && author.equals(book.getAuthor())) {
 				
-				list.remove(i);
 				removeBook = (Book)list.get(i);
+				list.remove(i);
+				break;
 				
 			}
 			
@@ -98,7 +99,7 @@ public class BookController {
 	public int ascBook() {
 		
 		// 책 이름으로 오름차순 후 1 반환
-		return 0;
+		return 1;
 		
 	}
 
