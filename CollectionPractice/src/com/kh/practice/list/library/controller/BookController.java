@@ -53,10 +53,12 @@ public class BookController {
 		
 		ArrayList searchList = new ArrayList();
 		
-		for(int i = 0; i < bookList.size(); i++) {
+		for(int i = 0; i < list.size(); i++) {
 			
-			if(bookList.contains(keyword)) {
-				searchList.add(bookList.get(i));
+			Book book = (Book)list.get(i);
+			
+			if(book.getTitle().contains(keyword)) {
+				searchList.add(list.get(i));
 			}
 			
 		}
